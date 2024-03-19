@@ -1,0 +1,1166 @@
+-- Destroys UI 
+for i,v in pairs(game.CoreGui:GetDescendants()) do
+    if v.Name == "Devil Hub LT2" then
+    v:Destroy()
+    end
+end
+
+-- Open / Closed
+if game:GetService("UserInputService").TouchEnabled and game:GetService("UserInputService").KeyboardEnabled == true then
+            
+    local OpenUi = Instance.new("ScreenGui")
+    local DropShadow = Instance.new("Frame")
+    local Open = Instance.new("TextButton")
+    local UIText = Instance.new("TextLabel")
+    local OpenString = true
+    
+    --Properties:
+    
+    OpenUi.Name = "Open Ui"
+    OpenUi.Parent = game.CoreGui
+    OpenUi.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    DropShadow.Name = "DropShadow"
+    DropShadow.Parent = OpenUi
+    DropShadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    DropShadow.BorderSizePixel = 0
+    DropShadow.Position = UDim2.new(0, 500, 0, 10)  --{0, -33}, {0, 5}
+    DropShadow.Size = UDim2.new(0, 90, 0, 28)
+    DropShadow.ZIndex = 4
+    
+    Open.Name = "Open"
+    Open.Parent = DropShadow
+    Open.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    Open.BorderSizePixel = 0
+    Open.Position = UDim2.new(0.459571004, -45, -0.575309217, 10)
+    Open.Selectable = false
+    Open.Size = UDim2.new(0, 90, 0, 30)
+    Open.ZIndex = 5
+    Open.Font = Enum.Font.SourceSans
+    Open.Text = ""
+    Open.TextSize = 18.000
+    
+    UIText.Name = "UIText"
+    UIText.Parent = Open
+    UIText.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    UIText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    UIText.BorderSizePixel = 0
+    UIText.Position = UDim2.new(-6.78168419e-07, 0, 0, 0)
+    UIText.Size = UDim2.new(0, 90, 0, 30)
+    UIText.Font = Enum.Font.ArialBold
+    UIText.Text = "Close Ui"
+    UIText.TextColor3 = Color3.fromRGB(0, 0, 0)
+    UIText.TextSize = 21.000
+    UIText.TextWrapped = true
+    
+    -- Scripts:
+    
+    local function AYQUHYR_fake_script() -- Open.LocalScript 
+        local script = Instance.new('LocalScript', Open)
+        script.Parent.MouseButton1Down:Connect(function()
+            if OpenString == true then
+                script.Parent.UIText.Text = "Open UI"
+                OpenString = false
+                game:GetService("CoreGui")["DEVIL HUB LT2"].Main.Visible = false
+            else
+                script.Parent.UIText.Text = "Close UI"
+                OpenString = true
+                game:GetService("CoreGui")["DEVIL HUB LT2"].Main.Visible = true
+            end
+        end)
+        
+    end
+    coroutine.wrap(AYQUHYR_fake_script)()
+            else
+                print("Probably not a Mobile User")
+            end
+if game.PlaceId == 10042772221 or game.PlaceId == 13822889 then
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/teppyboy/RbxScripts/master/Misc/UI_Libraries/Zypher/Library.lua"))()
+
+local Themes = { 	
+    Background = Color3.fromRGB(46, 46, 54), 
+  	 GrayContrast = Color3.fromRGB(39, 38, 46), 	
+    DarkContrast = Color3.fromRGB(29, 29, 35), 
+  	 TextColor = Color3.fromRGB(255,255,255), 
+  	SectionContrast = Color3.fromRGB(39,38,46), 	
+   DropDownListContrast = Color3.fromRGB(34, 34, 41), 
+  	CharcoalContrast = Color3.fromRGB(21,21,26), } 
+
+
+local main = library:CreateMain({
+    projName = "Devil Hub LT2",
+    Resizable = true, 
+    MinSize = UDim2.new(0,400,0,400), 
+    MaxSize = UDim2.new(0,750,0,500),
+})
+
+local category = main:CreateCategory("DEVIL HUB LT2") 
+
+local section = category:CreateSection("Welcome") 
+
+section:Create(
+    "Textlabel",
+    "Welcome"
+)
+
+section:Create(
+    "Textlabel",
+    "Founder-N0T_Devil"
+)
+
+
+section:Create(
+    "Textlabel",
+    "Co-Owner-Step"
+)
+
+section:Create(
+    "Button",
+    "Step Shop",
+    function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Textlabel",
+    " Helper-scorpion1984"
+)
+
+section:Create(
+    "Textlabel",
+    " Helper-silentben8x"
+)
+
+section:Create(
+    "Textlabel",
+    " Helper-ihateschool"
+)
+
+local section = category:CreateSection("Discord") 
+
+section:Create(
+    "Button",
+    "Devil Hub Discord",
+    function()
+        setclipboard("https://discord.gg/ZaSBr2FeCP")
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Scrop Discord",
+    function()
+        setclipboard("https://discord.gg/uRYXv5Z5Mp")
+    end,
+    {
+        animated = true,
+    }
+)
+
+local section = category:CreateSection("UI") 
+
+for ColorsName, Value in next, Themes do
+    section:Create(
+        "ColorPicker",
+        ColorsName,
+        function(colors)
+            Value = colors
+            library:SetThemeColor(ColorsName, colors)
+        end,
+        {
+            default = Value
+        }
+    )
+end
+
+local category = main:CreateCategory("Game") 
+
+local section = category:CreateSection("Game") 
+
+section:Create(
+    "Button",
+    "Rest Player",
+    function()
+        game.Players.LocalPlayer.Character:BreakJoints()
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Re-Join Game",
+    function()
+       game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)          
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Leave Game",
+    function()
+        game:shutdown()
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Chat Off",
+    function()
+        game:GetService("StarterGui"):SetCoreGuiEnabled('Chat', false)
+    end,
+    {
+        animated = true,
+    }
+)
+
+ 
+section:Create(
+    "Button",
+    "Chat On",
+    function()
+        game:GetService("StarterGui"):SetCoreGuiEnabled('Chat', true)
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "BTool",
+    function()
+        backpack = game:GetService("Players").LocalPlayer.Backpack
+         hammer = Instance.new("HopperBin") 
+         hammer.Name = "Hammer" hammer.BinType = 4 
+         hammer.Parent = backpack
+         
+          cloneTool = Instance.new("HopperBin")
+           cloneTool.Name = "Clone"
+            cloneTool.BinType = 3 
+           cloneTool.Parent = backpack
+    end,
+    {
+        animated = true,
+    }
+)
+
+--Walkspeed--
+
+local walkspeed = 16
+
+game:GetService("RunService").RenderStepped:Connect(function()
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walkspeed 
+end)
+
+local category = main:CreateCategory("Character") 
+
+local section = category:CreateSection("Character") 
+
+section:Create(
+    "Slider",
+    "WalkSpeed",
+    function(value)
+        walkspeed = value
+    end,
+    {
+        min = 16,
+        max = 300,
+        default = 16,
+        precise = true, 
+        changablevalue = true
+    }
+)
+
+--Jump Power--
+
+local jumppower = 50
+
+game:GetService("RunService").RenderStepped:Connect(function()
+
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = jumppower 
+end)
+
+
+section:Create(
+    "Slider",
+    "JumpPower",
+    function(value)
+         jumppower = value
+    end,
+    {
+        min = 50,
+        max = 300,
+        default = 50,
+        precise = true, 
+        changablevalue = true
+    }
+)
+
+section:Create(
+    "Slider",
+    "Hip-Hight",
+    function(value)
+          game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = value
+    end,
+    {
+        min = 0,
+        max = 350,
+        default = 0,
+        precise = true, 
+        changablevalue = true
+    }
+)
+
+section:Create(
+    "Slider",
+    "Zoom-Distance",
+    function(value)
+         game.Players.LocalPlayer.CameraMaxZoomDistance = value
+    end,
+    {
+        min = 70,
+        max = 500,
+        default = 70,
+        precise = true, 
+        changablevalue = true
+    }
+)
+
+local flying = false
+
+game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+local mouse = game.Players.LocalPlayer:GetMouse()
+repeat wait() until mouse
+local plr = game.Players.LocalPlayer
+local torso = plr.Character.Torso
+local deb = true
+local ctrl = {f = 0, b = 0, l = 0, r = 0}
+local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+local maxspeed = 250
+local speed = 0
+ 
+function Fly()
+local bg = Instance.new("BodyGyro", torso)
+bg.P = 9e4
+bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+bg.cframe = torso.CFrame
+local bv = Instance.new("BodyVelocity", torso)
+bv.velocity = Vector3.new(0,0.1,0)
+bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+repeat wait()
+plr.Character.Humanoid.PlatformStand = false
+if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+speed = speed+125.0+(speed/maxspeed)
+if speed > maxspeed then
+speed = maxspeed
+end
+elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+speed = speed-250
+if speed < 0 then
+speed = 0
+end
+end
+if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+else
+bv.velocity = Vector3.new(0,0.1,0)
+end
+bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+until not flying
+ctrl = {f = 0, b = 0, l = 0, r = 0}
+lastctrl = {f = 0, b = 0, l = 0, r = 0}
+speed = 0
+bg:Destroy()
+bv:Destroy()
+plr.Character.Humanoid.PlatformStand = false
+end
+mouse.KeyDown:connect(function(key)
+if key:lower() == "f" then
+if flying then flying = false
+else
+flying = true
+Fly()
+end
+elseif key:lower() == "w" then
+ctrl.f = 1
+elseif key:lower() == "s" then
+ctrl.b = -1
+elseif key:lower() == "a" then
+ctrl.l = -1
+elseif key:lower() == "d" then
+ctrl.r = 1
+end
+end)
+mouse.KeyUp:connect(function(key)
+if key:lower() == "w" then
+ctrl.f = 0
+elseif key:lower() == "s" then
+ctrl.b = 0
+elseif key:lower() == "a" then
+ctrl.l = 0
+elseif key:lower() == "d" then
+ctrl.r = 0
+end
+wait(5)
+end)
+
+section:Create(
+    "Toggle",
+    "Fly   F on/off",
+    function(state)
+    Fly()
+    end,
+    {
+        default = false,
+    }
+)
+
+section:Create(
+    "Button",
+    "FlashLight  Q on/off",
+    function()
+local mouse = game.Players.LocalPlayer:GetMouse()
+function Light()
+    player = game.Players.LocalPlayer
+    playerChar = player.Character
+    playerLight = playerChar.Torso:FindFirstChild("Light")
+    if playerLight then
+        playerLight:Destroy()
+    else
+        light = Instance.new("SurfaceLight",playerChar:FindFirstChild("Torso"))
+        light.Name = "Light"
+        light.Range = 75
+        light.Brightness = 20 
+        light.Shadows = false 
+
+        local play = Instance.new("Sound",playerChar:FindFirstChild("Head"))
+        play.SoundId = "http://www.roblox.com/asset/?id=198914875" 
+        play:Play()
+       
+    end
+end
+mouse.KeyDown:connect(function(key)
+key = key:lower()
+if key == "q" then 
+    Light()
+end
+end)
+    end,
+    {
+        animated = true,
+    }
+)
+
+local category = main:CreateCategory("Teleport") 
+
+local section = category:CreateSection("Shops")
+
+section:Create(
+    "Button",
+    "Wood R Us",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(261.413574, 4.6830101, 59.0968933, 0.0743097439, -0.00722460682, -0.997209013, -1.22783968e-05, 0.999973774, -0.00724555133, 0.997235179, 0.000550657394, 0.0743077099))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Land Shop",
+    function()
+      game.Players.LocalPlayer.Character:PivotTo(CFrame.new(294.435547, 4.68993807, -99.4467087, 0.0167571325, 0.00442115311, -0.999849796, -1.398311e-05, 0.999990225, 0.0044215396, 0.999859571, -6.012831e-05, 0.01675703))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Wood Sell Area",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(322.014893, -1.31273365, 114.371803, 0.997653425, -0.000442466262, -0.0684646294, -1.0249928e-05, 0.999978125, -0.00661190413, 0.0684660599, 0.00659709098, 0.997631609))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Fancy Furnishings",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(492.333252, 4.68843699, -1716.85156, 0.999400854, -0.000209168516, -0.0346100107, -9.26743542e-06, 0.999980092, -0.00631117448, 0.0346106403, 0.00630771369, 0.999380946))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Boxed Cars",
+    function()
+       game.Players.LocalPlayer.Character:PivotTo(CFrame.new(508.724579, 4.69908381, -1464.06567, -0.978105366, -0.00025254162, -0.208110213, -3.19345986e-07, 0.999999285, -0.00121196453, 0.208110362, -0.00118536106, -0.978104651))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Bobs Shack",
+    function()
+       game.Players.LocalPlayer.Character:PivotTo(CFrame.new(264.28653, 9.86653805, -2543.19385, 0.184137598, -0.00364293554, -0.982893765, 9.57794214e-07, 0.999993145, -0.00370613229, 0.9829005, 0.000681497273, 0.184136346))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Links Logic",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(4608.02393, 8.49438667, -785.28186, 0.999446094, -0.000118859542, 0.0332786068, -9.52350183e-06, 0.999992549, 0.00385738886, -0.0332788192, -0.00385556882, 0.999438643))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Fine Art Shop",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(5211.79834, -164.512329, 719.424438, -0.00583847426, 0.00455539161, -0.999972522, -1.55343005e-05, 0.999989629, 0.00455556018, 0.999982893, 4.21091718e-05, -0.00583834294))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Strange Man",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(1062.34985, 18.2995968, 1131.24158, 0.443155468, 0, 0.896444738, 0, 1, 0, -0.896444738, 0, 0.443155468))
+    end,
+    {
+        animated = true,
+    }
+)
+
+local section = category:CreateSection("Wood Area") 
+
+section:Create(
+    "Button",
+    "Meadow",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(201.608566, 61.2677803, 1294.30371, 0.375662088, -0.000715493166, 0.926756442, -1.88749027e-06, 0.999999702, 0.000772811996, -0.92675668, -0.000292081328, 0.375661969))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Snow",
+    function()
+       game.Players.LocalPlayer.Character:PivotTo(CFrame.new(900.555725, 61.2978134, 1207.05103, -0.667146504, 0.00194214378, -0.744924009, -3.71657188e-06, 0.999996603, 0.0026104874, 0.744926512, 0.00174434402, -0.667144239))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "SnowGlow",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-1080.99182, -4.40130472, -954.385559, -0.00421884703, -0.00201997533, -0.999989033, -6.19298305e-07, 0.999997914, -0.0020199907, 0.999991119, -7.906664e-06, -0.00421883911))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Palm",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(4346.00684, -4.42066479, -1807.85767, -0.537806273, 0.00650831405, 0.843043268, -1.39223421e-05, 0.999970138, -0.00772867398, -0.843068421, -0.0041682669, -0.53779012))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Volcano",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-1594.01379, 624.473083, 1130.78174, 0.92904526, -0.00126755517, 0.369963884, -1.20729546e-05, 0.99999404, 0.00345645589, -0.36996603, -0.00321567105, 0.929039717))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Swamp",
+    function()
+      game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-1188.75781, 133.002274, -827.215149, 0.750131965, 0.000975206669, -0.661287427, -1.22780682e-06, 0.999998927, 0.00147330877, 0.661288142, -0.00110436056, 0.75013119))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Safari",
+    function()
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(101.314934, 4.66581345, -1218.50977, 0.990690649, -0.000535133411, -0.13613151, 6.41022496e-07, 0.999992251, -0.00392632419, 0.136132568, 0.0038896855, 0.99068296))
+    end,
+    {
+        animated = true,
+    }
+)
+
+local category = main:CreateCategory("Slot") 
+
+local section = category:CreateSection("Land")
+
+section:Create(
+    "Button",
+    "Free Land",
+    function()
+                                   for a,b in pairs(workspace.Properties:GetChildren()) do 
+    if b:FindFirstChild("Owner") and b:FindFirstChild("OriginSquare") and b.Owner.Value == nil then 
+        game.ReplicatedStorage.PropertyPurchasing.ClientPurchasedProperty:FireServer(b, b.OriginSquare.OriginCFrame.Value.p + Vector3.new(0,3,0))
+ wait(0.5)
+        Instance.new('RemoteEvent', game:service'ReplicatedStorage'.Interaction).Name = "Ban"
+    for i,v in pairs(game.Workspace.Properties:GetChildren()) do
+        if v.Owner.Value == game.Players.LocalPlayer then
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+    wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.OriginSquare.CFrame + Vector3.new(0,10,0)
+    game.Players.LocalPlayer.Character.Humanoid.Jump = true
+    wait(0.1)
+        end
+    end
+
+  --     game.Players.LocalPlayer.Character:MoveTo(b.OriginSquare.Position)
+        break
+    end
+end
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "MaxLand",
+    function()
+        
+                            for i, v in pairs(game:GetService("Workspace").Properties:GetChildren()) do
+		if v:FindFirstChild("Owner") and v.Owner.Value == game.Players.LocalPlayer then
+			base = v
+			square = v.OriginSquare
+			end
+		end
+	function makebase(pos)
+		local Event = game:GetService("ReplicatedStorage").PropertyPurchasing.ClientExpandedProperty
+		Event:FireServer(base, pos)
+		end
+	spos = square.Position
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z))
+	makebase(CFrame.new(spos.X, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z))
+	makebase(CFrame.new(spos.X, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X, spos.Y, spos.Z - 80))
+--Corners--
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z - 80))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z - 80))
+--Corners--
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z - 80))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z - 80))
+
+    end,
+    {
+        animated = true,
+    }
+)
+
+local section = category:CreateSection("Load Base") 
+
+section:Create(
+    "Button",
+    "Slot 1",
+    function()
+local args = {
+    [1] = 1,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage").LoadSaveRequests.RequestLoad:InvokeServer(unpack(args))
+
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Slot 2",
+    function()
+local args = {
+    [1] = 2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage").LoadSaveRequests.RequestLoad:InvokeServer(unpack(args))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Slot 3",
+    function()
+local args = {
+    [1] = 3,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage").LoadSaveRequests.RequestLoad:InvokeServer(unpack(args))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Slot 4",
+    function()
+local args = {
+    [1] = 4,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage").LoadSaveRequests.RequestLoad:InvokeServer(unpack(args))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Slot 5",
+    function()
+local args = {
+    [1] = 5,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage").LoadSaveRequests.RequestLoad:InvokeServer(unpack(args))
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Slot 6",
+    function()
+local args = {
+    [1] = 6,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage").LoadSaveRequests.RequestLoad:InvokeServer(unpack(args))
+    end,
+    {
+        animated = true,
+    }
+)
+
+local category = main:CreateCategory("Map") 
+
+local section = category:CreateSection("Time") 
+
+section:Create(
+    "Toggle",
+    "Time Midday",
+    function(state)
+       game.Lighting.Changed:Connect(function() 
+       game.Lighting.TimeOfDay = "12:00:00" 
+       game.Lighting.Brightness = 1
+       end)
+    end,
+    {
+        default = false,
+    }
+)
+
+section:Create(
+    "Toggle",
+    "Time Midnight",
+    function(state)
+       game.Lighting.Changed:Connect(function() 
+       game.Lighting.TimeOfDay = "24:00:00" 
+       game.Lighting.Brightness = 0 
+       end)
+    end,
+    {
+        default = false,
+    }
+)
+
+section:Create(
+    "Slider",
+    "Brightness",
+    function(value)
+       game.Lighting.Brightness = value
+    end,
+    {
+        min = 0,
+        max =6,
+        default = 1,
+        precise = true, 
+        changablevalue = true
+    }
+)
+
+local section = category:CreateSection("Map Mods")
+
+section:Create(
+    "Toggle",
+    "Remove Water",
+    function(state)
+      local Value = state
+      
+      for i, v in next, Workspace.Water:GetChildren() do 
+      
+      if tostring(v) == "Water" then v.Transparency = Value and 1 or 0 
+    end
+end
+    end,
+    {
+        default = false,
+    }
+)
+
+section:Create(
+    "Button",
+    "Better Graphics",
+    function()
+         local light = game.Lighting
+  for i, v in pairs(light:GetChildren()) do
+    v:Destroy()
+  end
+
+  local ter = workspace.Terrain
+  local color = Instance.new("ColorCorrectionEffect")
+  local bloom = Instance.new("BloomEffect")
+  local sun = Instance.new("SunRaysEffect")
+  local blur = Instance.new("BlurEffect")
+
+  color.Parent = light
+  bloom.Parent = light
+  sun.Parent = light
+  blur.Parent = light
+
+  -- enable or disable shit
+
+  local config = {
+
+    Terrain = true;
+    ColorCorrection = true;
+    Sun = true;
+    Lighting = true;
+    BloomEffect = true;
+
+  }
+
+  -- settings {
+
+  color.Enabled = false
+  color.Contrast = 0.15
+  color.Brightness = 0.1
+  color.Saturation = 0.25
+  color.TintColor = Color3.fromRGB(255, 222, 211)
+
+  bloom.Enabled = false
+  bloom.Intensity = 0.1
+
+  sun.Enabled = false
+  sun.Intensity = 0.2
+  sun.Spread = 1
+
+  bloom.Enabled = false
+  bloom.Intensity = 0.05
+  bloom.Size = 32
+  bloom.Threshold = 1
+
+  blur.Enabled = false
+  blur.Size = 6
+
+  -- settings }
+
+
+  if config.ColorCorrection then
+    color.Enabled = true
+  end
+
+
+  if config.Sun then
+    sun.Enabled = true
+  end
+
+
+  if config.Terrain then
+    -- settings {
+    ter.WaterColor = Color3.fromRGB(10, 10, 24)
+    ter.WaterWaveSize = 0.1
+    ter.WaterWaveSpeed = 22
+    ter.WaterTransparency = 0.9
+    ter.WaterReflectance = 0.05
+    -- settings }
+  end
+
+
+  if config.Lighting then
+    -- settings {
+    light.Ambient = Color3.fromRGB(0, 0, 0)
+    light.Brightness = 4
+    light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+    light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+    light.ExposureCompensation = 0
+    light.FogColor = Color3.fromRGB(132, 132, 132)
+    light.GlobalShadows = true
+    light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+    light.Outlines = false
+    -- settings }
+  end
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "HD Graphics",
+    function()
+        _G.BlurSize = 3
+
+_G.ColorCorrectionBrightness = 0.03
+_G.ColorCorrectionContrast = 0.3
+_G.ColorCorrectionSaturation = 0.01
+_G.ColorCorrectionTintColor = Color3.fromRGB(244,244,244)
+
+_G.SunRaysIntensity = 0.2
+_G.SunRaysSpread = 1
+
+-- Lighting settings:
+_G.GlobalShadows = true
+_G.Brightness = 0.9
+_G.GeographicLatitude = 350
+_G.TimeOfDay = 17
+_G.ExposureCompensation = 0.03
+
+
+spawn(function()
+_,i = pcall(function()
+Lighting = game:GetService("Lighting")
+Blur = Instance.new("BlurEffect",Lighting)
+Color = Instance.new("ColorCorrectionEffect",Lighting)
+Sun = Instance.new("SunRaysEffect",Lighting)
+-- Setting the mood:
+Blur.Enabled=not false;Blur.Size=_G.BlurSize
+Color.Enabled=not false;Color.Brightness=_G.ColorCorrectionBrightness;Color.Contrast=_G.ColorCorrectionContrast;
+Color.Saturation=_G.ColorCorrectionSaturation;Color.TintColor=_G.ColorCorrectionTintColor
+Sun.Enabled=not false;Sun.Intensity=_G.SunRaysIntensity;Sun.Spread=_G.SunRaysSpread
+print("Finished setting mood")
+-- Setting Lighting:
+function loadLighting()
+Lighting.GlobalShadows = _G.GlobalShadows;
+Lighting.Brightness = _G.Brightness
+Lighting.GeographicLatitude =  _G.GeographicLatitude
+Lighting.TimeOfDay = _G.TimeOfDay
+Lighting.ExposureCompensation = _G.ExposureCompensation
+end
+loadLighting()
+end) if i and not _ then print("ERROR: "..i) else print("Loaded HD Graphics") end
+end)
+    end,
+    {
+        animated = true,
+    }
+)
+
+
+local category = main:CreateCategory("Dupe") 
+
+local section = category:CreateSection("Overwriting") 
+
+section:Create(
+    "Slider",
+    "Overwriting",
+    function(value)
+     Slot = value 
+      game:GetService("ReplicatedStorage").LoadSaveRequests.RequestSave:InvokeServer(Slot)
+    end,
+    {
+        min = 0,
+        max = 6,
+        default = 0,
+        precise = true, 
+        changablevalue = true
+    }
+)
+
+
+
+local category = main:CreateCategory("Troll") 
+
+local section = category:CreateSection("Player") 
+
+section:Create(
+    "Button",
+    "Thomas The Tank",
+    function()
+       loadstring(game:HttpGet(('http://pastebin.com/raw/tMr759X7'),true))()
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Pee Script",
+    function()
+         loadstring(game:HttpGet(('https://pastebin.com/raw/R57FiKfW'),true))()
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Coca Cola",
+    function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/nMu90Kdq'),true))()
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Button",
+    "Minecraft",
+    function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/cCSkZq0K'),true))()
+    end,
+    {
+        animated = true,
+    }
+)
+
+section:Create(
+    "Textlabel",
+    "Reset To Stop"
+)
+
+section:Create(
+    "Button",
+    "Reset",
+    function()
+          game.Players.LocalPlayer.Character:BreakJoints()
+    end,
+    {
+        animated = true,
+    }
+)
+
+local category = main:CreateCategory("Moblie") 
+
+local section = category:CreateSection("Moblie Support")
+
+section:Create(
+    "Button",
+    "Moblie Fly",
+    function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Flexzstr/FlyScript/main/Beta"))()
+    end,
+    {
+        animated = true,
+    }
+) 
+
+section:Create(
+    "Button",
+    "KeyBoad",
+    function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    end,
+    {
+        animated = true,
+    }
+)
+end
+
+
